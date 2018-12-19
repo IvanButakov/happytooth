@@ -15,11 +15,14 @@ import java.util.Optional;
 
 @Service
 public class RegistrationService {
-    @Autowired
-    private RegistrationRepository registrationRepository;
+    private final RegistrationRepository registrationRepository;
 
-    @Autowired
-    private MailSender mailSender;
+    private final MailSender mailSender;
+
+    public RegistrationService(RegistrationRepository registrationRepository, MailSender mailSender) {
+        this.registrationRepository = registrationRepository;
+        this.mailSender = mailSender;
+    }
 
     public void send(User user, String email, String phone, String idRegistration, String timeVisit){
         if (registrationRepository.findById(Long.valueOf(idRegistration)) != null && registrationRepository.findById(Long.valueOf(idRegistration)).isPresent()) {

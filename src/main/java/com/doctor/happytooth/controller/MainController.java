@@ -22,8 +22,11 @@ import java.util.Optional;
 
 @Controller
 public class MainController {
-    @Autowired
-    private RegistrationService registrationService;
+    private final RegistrationService registrationService;
+
+    public MainController(RegistrationService registrationService) {
+        this.registrationService = registrationService;
+    }
 
     @GetMapping("/")
     public String greeting(Map<String, Object> model) {
