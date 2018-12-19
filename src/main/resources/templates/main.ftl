@@ -88,7 +88,7 @@
                     <input type="text" class="form-control" name="idRegistration" placeholder="Enter a registration number" />
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="timeVisit" placeholder="Enter the date and time of the visit" />
+                    <input type="date" class="form-control" name="timeVisit" placeholder="Enter the date and time of the visit" />
                 </div>
                 <input type="hidden" name="_csrf" value="${_csrf.token}" />
                 <div class="form-group">
